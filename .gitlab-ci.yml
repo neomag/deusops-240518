@@ -1,0 +1,8 @@
+stages:
+    - build
+
+stage_build:
+    stage: build
+    image: ubuntu:22.04
+    script:
+        - echo "Privet Gitlab!"
