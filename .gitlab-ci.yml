@@ -8,3 +8,4 @@ stage_build:
         - shared-tag
     script:
         - echo "Privet Gitlab!"
+        - touch "somefile.txt"
