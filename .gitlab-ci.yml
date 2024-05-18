@@ -12,6 +12,8 @@ stage_build:
         - cd build
         - touch "somefile.txt"
         - echo "123" >> "somefile.txt"
+        - echo $MYVAR
+        - echo $MYVAR2
     artifacts:
         paths:
             - build
