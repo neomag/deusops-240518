@@ -4,5 +4,7 @@ stages:
 stage_build:
     stage: build
     image: ubuntu:22.04
+    tags:
+        - shared-tag
     script:
         - echo "Privet Gitlab!"
