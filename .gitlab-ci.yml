@@ -22,3 +22,7 @@ stage_build:
 #        when: on_success
 #        access: all
 #        expire_in: 30 days
+stage_build2:
+    stage: build
+    script:
+        - echo "Hello from build2!"
