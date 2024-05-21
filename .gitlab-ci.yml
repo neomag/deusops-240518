@@ -24,5 +24,9 @@ stage_build:
 #        expire_in: 30 days
 stage_build2:
     stage: build
+    tags:
+        - shared-tag
+
     script:
         - echo "Hello from build2!"
+    
