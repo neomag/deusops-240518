@@ -9,10 +9,10 @@ stage_build:
     script:
         - docker build -t deusops-may-flask-app .
         
-    artifacts:
-        paths:
-            - build
-        expire_in: 30 days
+#    artifacts:
+#        paths:
+#            - build
+#        expire_in: 30 days
 #        untracked: false
 #        when: on_success
 #        access: all
