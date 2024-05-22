@@ -7,13 +7,8 @@ stage_build:
     tags:
         - shared-tag
     script:
-        - echo "Privet Gitlab!"
-        - mkdir build
-        - cd build
-        - touch "somefile.txt"
-        - echo "123" >> "somefile.txt"
-        - echo $MYVAR
-        - echo $MYVAR2
+        - docker build -t deusops-may-flask-app .
+        
     artifacts:
         paths:
             - build
@@ -22,11 +17,11 @@ stage_build:
 #        when: on_success
 #        access: all
 #        expire_in: 30 days
-stage_build2:
-    stage: build
-    tags:
-        - shared-tag
+#stage_build2:
+#    stage: build
+#    tags:
+#        - shared-tag
 
-    script:
-        - echo "Hello from build2!"
+#    script:
+#        - echo "Hello from build2!"
     
