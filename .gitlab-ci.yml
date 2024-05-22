@@ -7,30 +7,10 @@ stages:
 
 stage_build:
     stage: build
-#    image: ubuntu:22.04
     image: docker:26.1.3
     services:
     - docker:26.1.3
-  before_script:
-    - docker info
     tags:
-        - shared-tag
+      - shared-tag
     script:
-        - docker build -t deusops-may-flask-app .
-        
-#    artifacts:
-#        paths:
-#            - build
-#        expire_in: 30 days
-#        untracked: false
-#        when: on_success
-#        access: all
-#        expire_in: 30 days
-#stage_build2:
-#    stage: build
-#    tags:
-#        - shared-tag
-
-#    script:
-#        - echo "Hello from build2!"
-    
+      - docker build -t deusops-may-flask-app .
