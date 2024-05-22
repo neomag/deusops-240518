@@ -15,7 +15,7 @@ stage_build:
     tags:
       - shared-tag
     script:
-#      - docker build -t deusops-may-flask-app .
+
       - echo $CI_REGISTRY_USER
       - echo $CI_REGISTRY_PASSWORD
       - echo $CI_REGISTRY
