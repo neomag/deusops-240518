@@ -19,9 +19,10 @@ stage_build:
       - echo $CI_REGISTRY_USER
       - echo $CI_REGISTRY_PASSWORD
       - echo $CI_REGISTRY
+      - echo $IMAGE_TAG
       - echo "END"
-      - docker build -t $IMAGE_TAG .      
       - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+      - docker build -t $IMAGE_TAG .      
       - docker push $IMAGE_TAG
 
 
