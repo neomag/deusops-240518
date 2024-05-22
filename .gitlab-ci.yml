@@ -3,8 +3,8 @@
 #  DOCKER_TLS_CERTDIR: ""
 variables:
    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
-   DOCKER_TLS_CERTDIR: "/certs"
-   DOCKER_TLS_VERIFY: "false"
+#   DOCKER_TLS_CERTDIR: "/certs"
+#   DOCKER_TLS_VERIFY: "false"
 stages:
     - build
 
@@ -16,7 +16,6 @@ stage_build:
     tags:
       - shared-tag
     script:
-
       - echo $CI_REGISTRY_USER
       - echo $CI_REGISTRY_PASSWORD
       - echo $CI_REGISTRY
