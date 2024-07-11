@@ -7,6 +7,7 @@ variables:
 #   DOCKER_TLS_VERIFY: "false"
 stages:
     - build
+    - deploy
 
 stage_build:
     stage: build
@@ -25,5 +26,12 @@ stage_build:
       - docker build -t $IMAGE_TAG .      
       - docker push $IMAGE_TAG
 
-
+deploy:
+  image:
+    name: bitnami/kubectl:latest
+    entrypoint: ['']
+  script:
+    - kubectl config get-contexts
+    - kubectl config use-context path/to/agent/project:agent-name
+    - kubectl get pods
 ############
