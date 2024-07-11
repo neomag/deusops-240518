@@ -37,6 +37,8 @@ spec:
             port: 5000
           initialDelaySeconds: 3
           periodSeconds: 10
+      imagePullSecrets:
+           - name: gitlab-registry-secret    
 ---
 apiVersion: v1
 kind: Service
