@@ -19,7 +19,7 @@ spec:
   template:
     metadata:
       labels:
-        app: mdeusops-may
+        app: deusops-may
     spec:
       containers:
       - name: deusops-may
