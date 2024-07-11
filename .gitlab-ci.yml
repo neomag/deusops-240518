@@ -1,9 +1,3 @@
-default:
-  image: docker:24.0.5
-  services:
-    - docker:24.0.5-dind
-  before_script:
-    - docker info
 #variables:
 #  DOCKER_HOST: tcp://docker:2375
 variables:
@@ -40,4 +34,7 @@ deploy:
     - kubectl config get-contexts
     - kubectl config use-context path/to/agent/project:agent-name
     - kubectl get pods
-############
+
+
+
+#############
