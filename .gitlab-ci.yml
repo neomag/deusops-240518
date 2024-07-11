@@ -26,9 +26,9 @@ deploy:
   stage: deploy
   tags:
   - docker
-  #image: "registry.gitlab.com/gitlab-org/cluster-integration/auto-deploy-image"
-   image: bitnami/kubectl:latest
-   entrypoint: ['']
+  image: 
+    name: bitnami/kubectl:latest
+    entrypoint: ['']
   script:
     - echo "wtf?"
     - echo $CI_DEPLOY_PASSWORD
