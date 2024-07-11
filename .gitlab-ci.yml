@@ -27,6 +27,8 @@ build:
 
 deploy:
   stage: deploy
+  tags:
+  - docker
   image:
     name: bitnami/kubectl:latest
     entrypoint: ['']
