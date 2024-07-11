@@ -1,9 +1,6 @@
-#variables:
-#  DOCKER_HOST: tcp://docker:2375
 variables:
    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
-#   DOCKER_TLS_CERTDIR: "/certs"
-#   DOCKER_TLS_VERIFY: "false"
+
 stages:
     - build
     - deploy
@@ -34,7 +31,7 @@ deploy:
     entrypoint: ['']
   script:
     - kubectl config get-contexts
-    - kubectl config use-context root/agents:a1-kuber
+    - kubectl config use-context root/project1:a1-kuber
     - kubectl get pods
 
 
