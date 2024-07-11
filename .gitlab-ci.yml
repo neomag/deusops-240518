@@ -37,7 +37,7 @@ deploy:
     - echo "$CI_DEPLOY_PASSWORD" | docker login $CI_REGISTRY -u $CI_DEPLOY_USER --password-stdin
     - kubectl config get-contexts
     - kubectl config use-context root/project1:a1-kuber
-- kubectl apply -f deployment.yml
+    - kubectl apply -f deployment.yml
 
 
 
