@@ -20,7 +20,7 @@ build:
     services:
     - docker:dind
     tags:
-      - shared-tag
+      - docker
     script:
       - echo $CI_REGISTRY_USER
       - echo $CI_REGISTRY_PASSWORD
