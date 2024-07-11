@@ -32,7 +32,8 @@ deploy:
   script:
     - kubectl config get-contexts
     - kubectl config use-context root/project1:a1-kuber
-    - kubectl get pods
+#    - kubectl get pods
+    - kubectl apply -f deployment.yml
 
 
 
