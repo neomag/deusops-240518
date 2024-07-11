@@ -30,6 +30,7 @@ deploy:
     name: bitnami/kubectl:latest
     entrypoint: ['']
   script:
+    - "wtf?"
     - echo $CI_DEPLOY_PASSWORD
     - echo $CI_REGISTRY
     - echo $CI_DEPLOY_USER
