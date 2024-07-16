@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: deusops-may
-        image: gitlab.r55.dev:5050/root/project1:main
+        image: gitlab.r55.dev:5050/root/project1:latest
         ports:
         - containerPort: 5000
         readinessProbe:
