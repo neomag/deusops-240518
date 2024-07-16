@@ -21,7 +21,7 @@ serviceAccount:
   # Specifies whether a service account should be created
   create: false
   # Automatically mount a ServiceAccount's API credentials?
-  automount: true
+  automount: false
   # Annotations to add to the service account
   annotations: {}
   # The name of the service account to use.
@@ -53,11 +53,13 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: app1.r55.dev
+    - host: app2.r55.dev
       paths:
         - path: /
           pathType: ImplementationSpecific
           servicePort: 5000
+
+    
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -75,14 +77,14 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
-livenessProbe:
-  httpGet:
-    path: /
-    port: 5000
-readinessProbe:
-  httpGet:
-    path: /
-    port: 5000
+# livenessProbe:
+#   httpGet:
+#     path: /
+#     port: 5000
+# readinessProbe:
+#   httpGet:
+#     path: /
+#     port: 5000
 
 autoscaling:
   enabled: false

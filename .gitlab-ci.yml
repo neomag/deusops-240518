@@ -1,5 +1,7 @@
 variables:
    IMAGE_TAG: $CI_REGISTRY_IMAGE:latest
+   APP_NAME: deusops-may
+   NS: ns1
 
 stages:
     - build
@@ -42,6 +44,8 @@ deploy-helm:
   - docker
   image: alpine/helm:3.15.2
   script:
-    - helm uninstall deusops-may -n ns1 &&  helm install deusops-may ./deusops-may -n ns1
+    - helm upgrade ${APP_NAME} ./charts --install --values=./charts/values.yaml --namespace ${NS}
+  #  - helm uninstall deusops-may -n ns1 &&  helm install deusops-may ./deusops-may -n ns1
+
 
 #
