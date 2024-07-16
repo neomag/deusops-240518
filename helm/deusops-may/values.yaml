@@ -5,7 +5,7 @@
 replicaCount: 2
 
 image:
-  repository: gitlab.r55.dev:5050/root/project1:main
+  repository: gitlab.r55.dev:5050/root/project1:latest
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
