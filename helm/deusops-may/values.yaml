@@ -2,13 +2,16 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+labels:
+  app: deusops-may
+
 replicaCount: 2
 
 image:
-  repository: gitlab.r55.dev:5050/root/project1:latest
+  repository: gitlab.r55.dev:5050/root/project1
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
 imagePullSecrets: [{ name: gitlab-registry-secret }]
 nameOverride: ""
@@ -26,7 +29,7 @@ serviceAccount:
   name: ""
 
 podAnnotations: {}
-podLabels: {app: deusops-may}
+podLabels: {}
 
 podSecurityContext: {}
   # fsGroup: 2000
@@ -54,6 +57,7 @@ ingress:
       paths:
         - path: /
           pathType: ImplementationSpecific
+          servicePort: 5000
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

@@ -4,6 +4,7 @@ variables:
 stages:
     - build
     - deploy-manifest
+    - deploy-helm
 
 # build:
 #     stage: build
@@ -22,18 +23,25 @@ stages:
 #       - docker build -t $IMAGE_TAG .      
 #       - docker push $IMAGE_TAG
 
-deploy-manifest:
-  stage: deploy-manifest
+# deploy-manifest:
+#   stage: deploy-manifest
+#   tags:
+#   - docker
+#   image: 
+#     name: bitnami/kubectl:latest
+#     entrypoint: ['']
+#   script:
+#     - kubectl config get-contexts
+#     - kubectl config use-context root/project1:a1-kuber
+#     - kubectl apply -f deployment.yml
+
+
+deploy-helm:
+  stage: deploy-helm
   tags:
   - docker
-  image: 
-    name: bitnami/kubectl:latest
-    entrypoint: ['']
+  image: alpine/helm:3.15.2
   script:
-    - kubectl config get-contexts
-    - kubectl config use-context root/project1:a1-kuber
-    - kubectl apply -f deployment.yml
+    - helm uninstall deusops-may -n ns1 &&  helm install deusops-may ./deusops-may -n ns1
 
-
-
-#####
+#
