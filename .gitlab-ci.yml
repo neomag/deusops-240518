@@ -59,7 +59,7 @@ deploy-helm-via-package-registry:
   #   name: alpine/helm:3.15.2
   #   entrypoint: [''] 
   script:
-    - helm repo list
+    - helm repo remove deusops-may
     - helm repo add --username ${CI_JOB_TOKEN} --password ${CI_JOB_TOKEN} deusops-may ${CI_API_V4_URL}/projects/4/packages/helm/stable || true
     - helm repo update
     - mkdir -p ~/.kube
