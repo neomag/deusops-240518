@@ -60,6 +60,6 @@ deploy-helm-via-package-registry:
     entrypoint: [''] 
   script:
     #- echo ${CI_API_V4_URL}
-    - helm repo add --username ${CI_JOB_TOKEN} --password ${CI_JOB_TOKEN} project1-helm-charts ${CI_API_V4_URL}/projects/project1-helm-charts/packages/helm/stable
+    - helm repo add --username ${CI_JOB_TOKEN} --password ${CI_JOB_TOKEN} deusops-may ${CI_API_V4_URL}/projects/project1-helm-charts/packages/helm/stable
     - helm install my-release project-1/mychart
 
