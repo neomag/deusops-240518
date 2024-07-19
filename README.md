@@ -1,7 +1,7 @@
 
 ### DeusOps may task id: 240518
 
-уровень Normal  
+уровень Normal с забеганием в H4)    
 
 для разработки использовался локальный gitlab и minikube
 
@@ -12,5 +12,6 @@ https://github.com/neomag/deusops-240518    сборка и deploy через he
 https://github.com/neomag/deusops-240518-helm  сборка и размещение в package registry gitlab helm chart  
 
 
+!(https://github.com/neomag/deusops-240518/raw/main/pic1.jpg)
 
 
