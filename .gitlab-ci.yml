@@ -54,10 +54,10 @@ stages:
 deploy-helm-via-package-registry:
   stage: deploy-helm-via-package-registry
   tags:
-  - shell
-  # image: 
-  #   name: alpine/helm:3.15.2
-  #   entrypoint: [''] 
+  - docker
+  image: 
+    name: alpine/helm:3.15.2
+    entrypoint: [''] 
   script:
     - helm repo remove deusops-may
     - helm repo add --username ${CI_JOB_TOKEN} --password ${CI_JOB_TOKEN} deusops-may ${CI_API_V4_URL}/projects/4/packages/helm/stable || true
@@ -65,7 +65,7 @@ deploy-helm-via-package-registry:
     - mkdir -p ~/.kube
     - echo "$KUBECONFIG_CONTENT" | base64 -d > ~/.kube/config
     - helm upgrade --install my-release deusops-may/deusops-may  -n ns1 --kubeconfig ~/.kube/config
-    #- helm install --username ${CI_JOB_TOKEN} --password ${CI_JOB_TOKEN} my-release deusops-may/deusops-may
+
 
 
 ###
