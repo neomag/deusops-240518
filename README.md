@@ -12,6 +12,6 @@ https://github.com/neomag/deusops-240518    сборка и deploy через he
 https://github.com/neomag/deusops-240518-helm  сборка и размещение в package registry gitlab helm chart  
 
 
-!(https://github.com/neomag/deusops-240518/raw/main/pic1.jpg)
+![image alt](https://github.com/neomag/deusops-240518/raw/main/pic1.jpg)
 
 
