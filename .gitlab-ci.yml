@@ -9,7 +9,7 @@ stages:
     - deploy-helm
     - deploy-helm-via-package-registry
 
-сборка и заливка в gitlab container registry
+#сборка и заливка в gitlab container registry
 build:
     stage: build
     image: docker:26.1.3
