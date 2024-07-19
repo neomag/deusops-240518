@@ -65,6 +65,7 @@ deploy-helm-via-package-registry:
     - echo "$KUBECONFIG_CONTENT" | base64 -d > ~/.kube/config
     #- cat ~/.kube/config
     - echo $KUBECONFIG
+    - cat /builds/root/project1.tmp/KUBECONFIG
     - helm install my-release deusops-may/deusops-may
 
 ##
