@@ -62,9 +62,8 @@ deploy-helm-via-package-registry:
     - helm repo add --username ${CI_JOB_TOKEN} --password ${CI_JOB_TOKEN} deusops-may ${CI_API_V4_URL}/projects/4/packages/helm/stable
     - helm repo update
     - mkdir -p ~/.kube
-    # - cp "$KUBECONFIG_FILE" ~/.kube/config
     - echo "$KUBECONFIG" | base64 -d > ~/.kube/config
-    
+    - cat ~/.kube/config
     - helm install my-release deusops-may/deusops-may
 
 #
