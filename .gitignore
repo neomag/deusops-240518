@@ -115,3 +115,5 @@ dmypy.json
 
 # Local databases
 *.db
+.git
+.gitlab
