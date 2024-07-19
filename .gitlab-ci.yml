@@ -61,5 +61,5 @@ deploy-helm-via-package-registry:
   script:
     - helm repo add --username ${CI_JOB_TOKEN} --password ${CI_JOB_TOKEN} deusops-may ${CI_API_V4_URL}/projects/4/packages/helm/stable
     - helm repo update
-    - helm install my-release deusops-may/charts
+    - helm install my-release deusops-may
 
